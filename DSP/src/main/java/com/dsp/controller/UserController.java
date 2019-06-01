@@ -42,7 +42,6 @@ public class UserController {
 			session.setAttribute("code", code);
 			ImageIO.write(imgMap.get(code), "jpg", response.getOutputStream());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
