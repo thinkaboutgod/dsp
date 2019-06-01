@@ -47,6 +47,9 @@ public class UserController {
 		}
 	}
 	
+	public void hello() {
+		
+	}
 //	//执行登录
 //	@RequestMapping(value="/doLogin.action")
 //	public @ResponseBody MyResult userinfo(HttpSession session,String account,String pwd ,String code) {
