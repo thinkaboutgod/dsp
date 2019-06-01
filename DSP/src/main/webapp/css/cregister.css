@@ -1,0 +1,22 @@
+
+
+.reg{
+	width:500px;
+	background-color: #ccc;
+	border-radius:10px;
+	padding-bottom:15px;
+}
+
+ul,li {
+	list-style: none;
+	padding-left:50px;
+}
+
+li label{
+	width:80px;
+	height:25px;
+}
+
+.text-center{
+	padding-top:20px;
+}

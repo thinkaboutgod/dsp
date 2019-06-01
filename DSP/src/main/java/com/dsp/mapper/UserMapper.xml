@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dsp.mapper.UserMapper">
+
+	
+<!-- 	<resultMap id="userBean" type="com.dsp1.domain.User">
+		<id column="cuid" property="id" jdbcType="String" />
+		<result column="pwd" property="passward" jdbcType="VARCHAR "/>
+		<result column="account" property="ac" jdbcType="VARCHAR "/>
+	</resultMap> -->
+<!-- 	<insert id="saveUser" parameterType="com.dsp1.domain.User" useGeneratedKeys="true">
+		insert into cuser(ACCOUNT,PWD,NAME) values(#{ACCOUNT},#{PWD},#{name})
+	</insert> -->
+	
+	<select id="findUserByAcAndPwd" resultType = "com.dsp.pojo.User">
+		select * from cuser where account = #{param1} and pwd = #{param2}
+	</select>
+	
+<!-- 	<insert id="saveUser" useGeneratedKeys="true">
+		insert into cuser(ACCOUNT,PWD,NAME) values(#{param1},#{param2},#{param3})
+	</insert>
+	
+	<delete id="deleteById" parameterType="int">
+		delete from cuser where cuid = #{cuid}
+	</delete>
+	
+	<select id="querryAll"  resultType = "com.dsp.pojo.User">
+		select * from cuser
+	</select>
+	
+	<update id="updateACById" parameterType="com.dsp.pojo.User" >
+		update cuser set ACCOUNT = #{ACCOUNT} where CUID = #{CUID}
+	</update>
+	
+	<select id="findUserByWhere" parameterType="com.dsp1.domain.Condition">
+		select * from cuser
+		<where>
+			<if test="cuid != null">
+				and cuid = #{cuid}
+			</if>	
+			<if test="name != null and name !=''">
+				and name like '%${name}%'
+			</if>	
+		</where>
+	</select>
+	
+	<resultMap type="com.dsp1.domain.User" id="user_files_map">
+		<id property="CUID" column="cuid" />
+		<result property="name" column="name" />
+		<result property="ACCOUNT" column="account" />
+		<result property="PWD" column="pwd" />
+		<collection property="files" ofType="com.dsp1.domain.Files">
+			<id property="fid" column="fid"/>
+			<result property="fname" column="fname"/>
+			<result property="upTime" column="upTime"/>
+			<result property="deScore" column="deScore"/>
+		</collection>
+	</resultMap>
+	<select id="findFilesByUser" resultMap="user_files_map">
+		select name,account,pwd,fname,uptime,descore from cuser u,files f where u.cuid = f.cuid
+		<where>
+			<if test="cuid != null">
+			 and cuid = #{cuid}
+			</if>
+		</where>
+	</select> -->
+</mapper>
+

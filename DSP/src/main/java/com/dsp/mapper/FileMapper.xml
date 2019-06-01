@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.dsp.mapper.FileMapper">
+
+	<select id="findType" resultType="FileType">
+		select * from filetype where tname=#{param1}
+	</select>
+	
+	<insert id="insertFile" parameterType="Files">
+		insert into files (cuid,fname,descore,tid,dtimes,sid,path) values
+		(#{cuid},#{fname},#{dscore},#{fileType.tid},#{dtimes},#{fstate.sid},#{path})
+	</insert>
+	
+	<resultMap type="Files" id="fileBean">
+		<id column="fid" property="fid" jdbcType="INTEGER"></id>
+		<result column="cuid" property="cuid" jdbcType="INTEGER"></result>
+		<result column="fname" property="fname" jdbcType="VARCHAR"></result>
+		<result column="uptime" property="uptime" jdbcType="VARCHAR"></result>
+		<result column="descore" property="dscore" jdbcType="INTEGER"></result>
+		<result column="dtimes" property="dtimes" jdbcType="INTEGER"></result>
+		<result column="path" property="path" jdbcType="VARCHAR"></result>
+		<association property="fileType" javaType="FileType">
+			<id column="tid" property="tid" jdbcType="INTEGER"></id>
+			<result column="tname" property="tname" jdbcType="VARCHAR"></result>
+			<result column="tscore" property="tscore" jdbcType="INTEGER"></result>
+		</association>
+		<association property="fstate" javaType="Fstate">
+			<id column="sid" property="sid" jdbcType="INTEGER"></id>
+			<result column="sname" property="sname" jdbcType="VARCHAR"></result>
+		</association>
+		<association property="user" javaType="User">
+			<id column="cuid" property="cuid" jdbcType="INTEGER"></id>
+			<result column="name" property="name" jdbcType="VARCHAR"></result>
+		</association>
+	</resultMap>
+	
+	<select id="findAllFiles"  resultMap="fileBean">
+		select a.*,b.*,c.*,d.name from files a,filetype b,fstate c,cuser d where a.tid=b.tid and a.sid=c.sid and a.cuid=d.cuid
+	</select>
+	
+</mapper>
