@@ -27,6 +27,8 @@
 		<druid.version>1.1.10</druid.version>
 		<alipay.version>3.7.26.ALL</alipay.version>
 		<webmagic.vsersion>0.7.3</webmagic.vsersion>
+		<kaptcha.version>2.3.2</kaptcha.version>
+		<zhenzisms.version>1.0.2</zhenzisms.version>
 	</properties>
 	<dependencies>
 		<!-- junit -->
@@ -198,16 +200,16 @@
 		<dependency>
 			<groupId>com.github.penggle</groupId>
 			<artifactId>kaptcha</artifactId>
-			<version>2.3.2</version>
+			<version>${kaptcha.version}</version>
 		</dependency>
-		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>javax.servlet-api</artifactId> 
-			<version>4.0.1</version> <scope>provided</scope> </dependency> -->
+		<dependency>
+			<groupId>com.zhenzikj</groupId>
+			<artifactId>zhenzisms</artifactId>
+			<version>${zhenzisms.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<!-- <resources> <resource> <directory>src/main/resources/ </directory> 
-			<includes> <include>**/*.xml</include> </includes> <filtering>true</filtering> 
-			</resource> </resources> -->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -219,5 +221,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
