@@ -23,7 +23,7 @@ public class FileController {
 	
 	@Autowired FileService fileService;
 	@Autowired MyResult myResult;
-	
+	@Autow
 	//查询所有文件
 	@RequestMapping(value="allFile")
 	public @ResponseBody Map<String, List<Files>> allFile(){
