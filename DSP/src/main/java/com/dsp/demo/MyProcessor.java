@@ -19,6 +19,8 @@ public class MyProcessor implements PageProcessor {
 				"[@id=\"mainBox\"]/main/div[1]/div[1]/h1/text()").toString());
 		System.out.println("32132113");
 
+		System.out.println("分支测试");
+		
 		System.out.println("测试");
 
 		String title = page.getHtml().xpath("//*[@id=\"q_29\"]/p/text()").get();
