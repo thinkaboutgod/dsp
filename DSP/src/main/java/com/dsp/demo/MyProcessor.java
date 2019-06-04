@@ -18,6 +18,23 @@ public class MyProcessor implements PageProcessor {
 		page.putField("title",page.getHtml().xpath("//*"+
 				"[@id=\"mainBox\"]/main/div[1]/div[1]/h1/text()").toString());
 		System.out.println("32132113");
+		
+		
+		String title = page.getHtml().xpath("//*[@id=\"q_29\"]/p/text()").get();
+		int index = title.lastIndexOf(".");
+		title = title.substring(index+2);
+		
+		String img = page.getHtml().xpath("//*[@id=\"q_29\"]/div/div[2]/div").css("img","src").get();
+		img="http://www.jppt.com.cn"+img;
+		System.out.println("title:"+title);
+		System.out.println(img);
+		try {
+			DownloadUtil.download(img, "29题", "D:/data");
+			System.out.println("下载成功");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
