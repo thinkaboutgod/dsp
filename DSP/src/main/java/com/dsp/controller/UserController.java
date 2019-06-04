@@ -31,6 +31,8 @@ public class UserController {
 	@RequestMapping("toLogin")
 	public String toLogin() {
 		System.out.println("123");
+		System.out.println("123");
+		
 		return "redirect:/wjsp/clogin.jsp";
 	}
 

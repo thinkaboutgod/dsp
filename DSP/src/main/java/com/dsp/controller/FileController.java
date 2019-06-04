@@ -30,6 +30,7 @@ public class FileController {
 		List<Files> fList = fileService.searchAllFile();
 		Map<String, List<Files>> map = new HashMap<>();
 		map.put("data", fList);
+		System.out.println("123");
 		return map;
 	}
 	
