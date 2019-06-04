@@ -30,6 +30,7 @@ public class UserController {
 	//发送登录页面
 	@RequestMapping("toLogin")
 	public String toLogin() {
+		System.out.println("123");
 		return "redirect:/wjsp/clogin.jsp";
 	}
 
