@@ -18,6 +18,7 @@ public class MyProcessor implements PageProcessor {
 		page.putField("title",page.getHtml().xpath("//*"+
 				"[@id=\"mainBox\"]/main/div[1]/div[1]/h1/text()").toString());
 		System.out.println("32132113");
+		System.out.println("测试");
 	}
 
 	@Override
