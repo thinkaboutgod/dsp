@@ -17,7 +17,7 @@ public class MyProcessor implements PageProcessor {
 						"[a‐z 0‐9 ‐]+/article/details/[0‐9]{8}").all());//将当前页面里的所有链接都添加到目标页面中
 		page.putField("title",page.getHtml().xpath("//*"+
 				"[@id=\"mainBox\"]/main/div[1]/div[1]/h1/text()").toString());
-		
+		System.out.println("32132113");
 	}
 
 	@Override
